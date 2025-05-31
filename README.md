@@ -50,7 +50,7 @@ if(BUILD_TESTS)
         gtest_main
     )
 
-    if(COVERAGE)
+     if(COVERAGE)
         target_compile_options(RunTest PRIVATE --coverage)
         target_link_options(RunTest PRIVATE --coverage)
     endif()
@@ -58,8 +58,8 @@ if(BUILD_TESTS)
     gtest_discover_tests(RunTest)
 endif()
 set(CPACK_PACKAGE_NAME "${PROJECT_NAME}")
-set(CPACK_PACKAGE_VENDOR "tyrtir")
-set(CPACK_PACKAGE_CONTACT "mihailokrivov@yandex.ru")
+set(CPACK_PACKAGE_VENDOR "vituck")
+set(CPACK_PACKAGE_CONTACT "vvlukanin13@mail.ru")
 set(CPACK_PACKAGE_VERSION "${PROJECT_VERSION}")
 set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "${PROJECT_DESCRIPTION}")
 set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE")
@@ -75,18 +75,12 @@ if(WIN32)
     set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE.rtf")
 else()
     set(CPACK_GENERATOR "TGZ;DEB;RPM")
-    set(CPACK_DEBIAN_PACKAGE_MAINTAINER "tyrtir <mihailokrivov@yandex.ru>")
+    set(CPACK_DEBIAN_PACKAGE_MAINTAINER "vituck <vvlukanin13@mail.ru>")
     set(CPACK_DEBIAN_PACKAGE_ARCHITECTURE "amd64")
 endif()
 
-include(InstallRequiredSystemLibraries)
-include(CPack)
 ```
-## Добавляем CHangeLog.md
-```
-* Sat May 26 2025 tyrtir <mihailokrivov@yandex.ru> 0.1.0.0
-- Initial RPM release
-```
+
 ## Laboratory work VI
 Данная лабораторная работа посвещена изучению средств пакетирования на примере CPack
 ```
@@ -172,11 +166,7 @@ include(InstallRequiredSystemLibraries)
 include(CPack)
 
 ```
-## Добавляем CHangeLog.md
-```
-* Sat May 26 2025 tyrtir <mihailokrivov@yandex.ru> 0.1.0.0
-- Initial RPM release
-```
+
 ## Добавляем release.yml
 ```
 name: Release Build
